@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = Category.find_by(kind: params[:category_name]).entries
   end
 end
