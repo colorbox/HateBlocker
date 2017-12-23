@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Entry index', type: :feature do
   before do
-    Entry.create(title: 'test_title', url:'http://google.com', category:'category')
+    Entry.create(title: 'test_title', url: 'http://google.com', category: 'category')
   end
 
   scenario 'visit index' do
