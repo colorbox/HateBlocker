@@ -21,6 +21,7 @@ gem 'httpclient'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'oauth'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
