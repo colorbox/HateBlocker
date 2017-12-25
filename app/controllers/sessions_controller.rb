@@ -11,9 +11,7 @@ class SessionsController < ApplicationController
       access_token_path: 'https://www.hatena.com/oauth/token',
       authorize_path: 'https://www.hatena.ne.jp/oauth/authorize')
 
-    request_token = @consumer.get_request_token(
-      {oauth_callback: 'http://localhost:3001/categories/game/entries'},
-      scope: 'read_public')
+    request_token = @consumer.get_request_token({oauth_callback: ENV['HATENA_CALLBACK_URL']}, scope: 'read_public')
 
     session[:request_token] = request_token.token
     session[:request_token_secret] = request_token.secret
