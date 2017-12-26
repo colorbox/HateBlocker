@@ -1,1 +1,14 @@
+
 <%= render partial: :prohibition, collection: @prohibitions %>
+
+<%= form_for :prohibition  do |f| %>
+  <p>
+    <%= f.label :prohibition_type %>:
+    <%= f.text_field :prohibition_type %><br />
+
+    <%= f.label :word %>:
+    <%= f.text_field :word %><br />
+
+    <%= f.submit "create" %>
+  </p>
+<% end %>

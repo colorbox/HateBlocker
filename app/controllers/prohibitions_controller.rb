@@ -9,6 +9,7 @@ class ProhibitionsController < ApplicationController
 
   def create
     @user.prohibitions.create(prohibition_params)
+    redirect_to prohibitions_path
   end
 
   def update
@@ -27,7 +28,7 @@ class ProhibitionsController < ApplicationController
   end
 
   def prohibition_params
-    params.require(:prohibition).permit(:prohibhition_type, :word)
+    params.require(:prohibition).permit(:prohibition_type, :word)
   end
 
   def set_user
