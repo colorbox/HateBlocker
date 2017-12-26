@@ -1,14 +1,14 @@
-
 <%= render partial: :prohibition, collection: @prohibitions %>
 
 <%= form_for :prohibition  do |f| %>
   <p>
+    <h4>ブロック要素の追加</h4>
     <%= f.label :prohibition_type %>:
-    <%= f.text_field :prohibition_type %><br />
+    <%= f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]] %>
 
     <%= f.label :word %>:
     <%= f.text_field :word %><br />
 
-    <%= f.submit "create" %>
+    <%= f.submit 'add' %>
   </p>
 <% end %>
