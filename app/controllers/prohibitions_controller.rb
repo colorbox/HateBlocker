@@ -24,7 +24,7 @@ class ProhibitionsController < ApplicationController
   private
 
   def set_prohibition
-    @prohibition = Prohibision.find(params[:id])
+    @prohibition = Prohibition.find(params[:id])
   end
 
   def prohibition_params
