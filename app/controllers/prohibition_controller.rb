@@ -1,2 +1,0 @@
-class ProhibitionController < ApplicationController
-end
