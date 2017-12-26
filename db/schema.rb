@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2017_12_25_152540) do
 
   create_table "prohibitions", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "prohibhition_type", null: false
+    t.string "prohibition_type", null: false
     t.string "word", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
