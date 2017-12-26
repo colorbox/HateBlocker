@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :prohibition
+  has_many :prohibitions
 end
