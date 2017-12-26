@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :sessions, only: %i(create index)
 
-  resources :prohibitions, only: %i(index create update destroy)
+  resources :prohibitions, only: %i(index create destroy)
 end

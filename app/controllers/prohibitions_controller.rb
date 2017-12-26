@@ -12,10 +12,6 @@ class ProhibitionsController < ApplicationController
     redirect_to prohibitions_path
   end
 
-  def update
-    @prohibition.update!(prohibition_params)
-  end
-
   def destroy
     @prohibition.destroy!
     redirect_to prohibitions_path
