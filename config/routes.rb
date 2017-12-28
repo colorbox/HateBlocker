@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  resources :categories, param: :name,  only: %i() do
+  resources :categories, param: :kind,  only: %i() do
     resources :entries, only: :index
   end
 
