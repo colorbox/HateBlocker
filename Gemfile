@@ -27,6 +27,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails', require: false
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
