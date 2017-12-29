@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'Entry index', type: :feature do
-  let(:category){ FactoryBot.create(:category) }
-  let!(:entry1){ FactoryBot.create(:entry, title: 'entry1title', url: 'http://example.com', category: category) }
-  let!(:entry2){ FactoryBot.create(:entry, title: 'entry2title', url: 'http://example2.com', category: category) }
-  let!(:entry3){ FactoryBot.create(:entry, title: 'entr3title', url: 'http://exampl3.com', category: category) }
-  let(:user){ FactoryBot.create(:user) }
+  let(:category){ create(:category) }
+  let!(:entry1){ create(:entry, title: 'entry1title', url: 'http://example.com', category: category) }
+  let!(:entry2){ create(:entry, title: 'entry2title', url: 'http://example2.com', category: category) }
+  let!(:entry3){ create(:entry, title: 'entr3title', url: 'http://exampl3.com', category: category) }
+  let(:user){ create(:user) }
 
   before do
     page.set_rack_session(user_identifier: user.identifier)
@@ -20,7 +20,7 @@ RSpec.feature 'Entry index', type: :feature do
   end
 
   context 'there are title prohibited entry' do
-    let!(:prohibition){ FactoryBot.create(:title_prohibition, word: 'entry', user: user) }
+    let!(:prohibition){ create(:title_prohibition, word: 'entry', user: user) }
 
     scenario 'there is no entries with prohibited title' do
       visit category_entries_path(category.kind)
@@ -31,7 +31,7 @@ RSpec.feature 'Entry index', type: :feature do
   end
 
   context 'there are url prohibited entry' do
-    let!(:prohibition){ FactoryBot.create(:domain_prohibition, word: 'example', user: user) }
+    let!(:prohibition){ create(:domain_prohibition, word: 'example', user: user) }
 
     scenario 'there is no entries with prohibited domain' do
       visit category_entries_path(category.kind)
