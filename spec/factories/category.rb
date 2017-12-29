@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :category do
-    kind 0
+    kind :game
   end
 end
