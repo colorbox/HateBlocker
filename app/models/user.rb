@@ -3,8 +3,7 @@ class User < ApplicationRecord
 
   def prohibit_entry?(entry)
     prohibitions.map{|prohibition|
-      return prohibition.prohibit?(entry.url) if prohibition.domain?
-      return prohibition.prohibit?(entry.title) if prohibition.title?
+      (prohibition.prohibit?(entry.url) && prohibition.domain?) || (prohibition.prohibit?(entry.title) && prohibition.title?)
     }.any?
   end
 end
