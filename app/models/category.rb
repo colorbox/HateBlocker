@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  enum kind: {economics:0, fun:1, life:2, knowledge:3, it:4, entertainment:5, game:6}
+  enum kind: {general:0 , social:1 ,economics:2, fun:3, life:4, knowledge:5, it:6, entertainment:7, game:8}
 
   has_many :entries
 end
