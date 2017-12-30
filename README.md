@@ -1,24 +1,18 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+[![Build Status](https://travis-ci.org/colorbox/hateblocker.svg?branch=master)](https://travis-ci.org/colorbox/hateblocker)
 
-* Ruby version
 
-* System dependencies
+# Hateblocker
 
-* Configuration
+https://hateblocker.herokuapp.com/
+はてブのホッテントリから、URLに特定のドメインやタイトルに特定の単語を含んだ記事を除外して表示するアプリです。
+禁止ワードの管理にははてブのOAuth認証が必要です。
 
-* Database creation
+## waffle.io
 
-* Database initialization
+issue管理は下記を使っています。
 
-* How to run the test suite
+https://waffle.io/colorbox/hateblocker
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
