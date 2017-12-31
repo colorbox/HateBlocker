@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 35e9638daffd0f844ee072418fcd73472aa283ec
+  revision: 7fae88f71d7ac0a0c0755ff5172fbde00c8a3248
   specs:
     actioncable (5.2.0.beta2)
       actionpack (= 5.2.0.beta2)
@@ -68,7 +68,6 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
-    ast (2.3.0)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.1.0)
@@ -140,11 +139,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
-    parallel (1.12.1)
-    parser (2.4.0.2)
-      ast (~> 2.3)
     pg (0.21.0)
-    powerpack (0.1.1)
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
@@ -158,7 +153,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rainbow (3.0.0)
     rake (12.3.0)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
@@ -181,14 +175,6 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
-    rubocop (0.52.1)
-      parallel (~> 1.10)
-      parser (>= 2.4.0.2, < 3.0)
-      powerpack (~> 0.1)
-      rainbow (>= 2.2.2, < 4.0)
-      ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.4)
@@ -231,7 +217,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.1)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.3.0)
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -263,7 +248,6 @@ DEPENDENCIES
   rack_session_access
   rails!
   rspec-rails
-  rubocop
   sass-rails
   selenium-webdriver
   spring
