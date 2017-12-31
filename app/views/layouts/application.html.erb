@@ -9,8 +9,15 @@
   </head>
 
   <body>
-    <%= link_to '禁止ワード管理', prohibitions_path %>
 
-    <%= yield %>
+  <% if @user %>
+    <%= link_to '禁止ワード管理', prohibitions_path %>
+  <% else %>
+    <%= form_for(:sessions, url: :sessions) do |f| %>
+      <p><%= f.submit "Login" %></p>
+    <% end %>
+  <% end %>
+
+  <%= yield %>
   </body>
 </html>
