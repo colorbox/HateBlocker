@@ -11,7 +11,8 @@
   <body>
 
   <% if @user %>
-    <%= link_to '禁止ワード管理', prohibitions_path %>
+    <p><%= link_to '禁止ワード管理', prohibitions_path %></p>
+    <p><%= link_to 'アカウント削除', user_path(@user), method: :delete %></p>
   <% else %>
     <%= form_for(:sessions, url: :sessions) do |f| %>
       <p><%= f.submit "Login" %></p>

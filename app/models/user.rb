@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :prohibitions
+  has_many :prohibitions, dependent: :destroy
 
   def prohibit_entry?(entry)
     prohibitions.map{|prohibition|
