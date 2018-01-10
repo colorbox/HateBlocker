@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_12_25_152540) do
+ActiveRecord::Schema.define(version: 2018_01_10_134743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2017_12_25_152540) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bookmark_count", default: 0
     t.index ["category_id"], name: "index_entries_on_category_id"
   end
 
