@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+
   resources :categories, param: :kind,  only: %i(index) do
     resources :entries, only: :index
   end
