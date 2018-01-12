@@ -163,9 +163,6 @@ GEM
     rack (2.0.3)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
-    rack_session_access (0.1.1)
-      builder (>= 2.0.0)
-      rack (>= 1.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -271,7 +268,6 @@ DEPENDENCIES
   omniauth-hatena
   pg
   puma
-  rack_session_access
   rails!
   rspec-rails
   sass-rails

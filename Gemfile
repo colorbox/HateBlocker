@@ -28,7 +28,6 @@ group :development, :test do
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'factory_bot_rails', require: false
-  gem 'rack_session_access'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
