@@ -62,7 +62,7 @@ development:
 test:
   <<: *default
   host: db
-  database: hateblocker_development
+  database: hateblocker_test
   username: postgres
   password:
 
