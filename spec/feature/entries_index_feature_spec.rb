@@ -9,8 +9,7 @@ RSpec.feature 'Entry index', type: :feature do
   let(:user){ create(:user) }
 
   before do
-    page.set_rack_session(user_identifier: user.identifier)
-    page.set_rack_session(access_token: user.access_token)
+    login_as(user)
   end
 
   scenario 'visit index' do
