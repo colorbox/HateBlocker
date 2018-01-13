@@ -10,12 +10,15 @@
 
   <body>
 
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p
+
   <% if @user %>
     <p><%= link_to '禁止ワード管理', prohibitions_path %></p>
     <p><%= link_to 'アカウント削除', user_path(@user), method: :delete %></p>
   <% else %>
     <%= form_for(:sessions, url: :sessions) do |f| %>
-      <p><%= f.submit "Login" %></p>
+      <p><%= link_to "Sign in with Hatena via devise", user_hatena_omniauth_authorize_path %></p>
     <% end %>
   <% end %>
 

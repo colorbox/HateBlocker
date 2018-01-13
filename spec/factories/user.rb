@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    identifier 'imuser'
-    access_token  'this_is_access_token'
+    provider 'hatena'
+    uid  'user_uid'
   end
 end
