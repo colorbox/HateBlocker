@@ -20,7 +20,7 @@
     <% if @user %>
       <p>
         <%= link_to '禁止ワード管理', prohibitions_path %>
-        <%= link_to 'アカウント削除', user_path(@user), method: :delete %>
+        <%= link_to 'アカウント削除', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'} %>
       </p>
     <% else %>
       <%= form_for(:sessions, url: :sessions) do |f| %>
