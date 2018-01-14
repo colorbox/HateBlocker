@@ -8,11 +8,14 @@ end
 gem 'rails', github: 'rails/rails'
 
 gem 'coffee-rails'
+gem 'devise'
 gem 'execjs'
 gem 'feedjira'
 gem 'httpclient'
 gem 'jbuilder'
 gem 'oauth'
+gem 'omniauth-hatena'
+gem 'omniauth'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
@@ -25,7 +28,6 @@ group :development, :test do
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'factory_bot_rails', require: false
-  gem 'rack_session_access'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end

@@ -6,8 +6,7 @@ RSpec.feature 'Category index', type: :feature do
   let!(:prohibition){ create(:title_prohibition, word: 'entry', user: user) }
 
   before do
-    page.set_rack_session(user_identifier: user.identifier)
-    page.set_rack_session(access_token: user.access_token)
+    login_as(user)
   end
 
   scenario 'delete account' do
@@ -15,7 +14,7 @@ RSpec.feature 'Category index', type: :feature do
 
     click_link('アカウント削除')
 
-    expect(User.where(identifier: user.identifier).count).to eq(0)
+    expect(User.count).to eq(0)
     expect(Prohibition.count).to eq(0)
   end
 end

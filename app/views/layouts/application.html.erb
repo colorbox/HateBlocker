@@ -10,15 +10,30 @@
 
   <body>
 
-  <% if @user %>
-    <p><%= link_to '禁止ワード管理', prohibitions_path %></p>
-    <p><%= link_to 'アカウント削除', user_path(@user), method: :delete %></p>
-  <% else %>
-    <%= form_for(:sessions, url: :sessions) do |f| %>
-      <p><%= f.submit "Login" %></p>
-    <% end %>
-  <% end %>
+  <header>
+    <h1>
+      はてブロッカー
+    </h1>
 
-  <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p
+    <% if @user %>
+      <p>
+        <%= link_to '禁止ワード管理', prohibitions_path %>
+        <%= link_to 'アカウント削除', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'} %>
+      </p>
+    <% else %>
+      <%= form_for(:sessions, url: :sessions) do |f| %>
+        <p><%= link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path %></p>
+      <% end %>
+    <% end %>
+
+  </header>
+
+  <hr>
+
+  <main>
+    <%= yield %>
+  </main>
   </body>
 </html>
