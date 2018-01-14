@@ -15,11 +15,11 @@ RSpec.feature 'Entry index', type: :feature do
 
   scenario 'visit index' do
     visit category_entries_path(category.kind)
-    expect(page).to have_text("#{entry1.title}:0")
-    expect(page).to have_text("#{entry2.title}:0")
-    expect(page).to have_text("#{entry3.title}:0")
-    expect(page).to have_text("#{entry4.title}:0")
-    expect(page).to have_text("#{entry_with_count_25.title}:25")
+    expect(page).to have_text("#{entry1.title}(0)")
+    expect(page).to have_text("#{entry2.title}(0)")
+    expect(page).to have_text("#{entry3.title}(0)")
+    expect(page).to have_text("#{entry4.title}(0)")
+    expect(page).to have_text("#{entry_with_count_25.title}(25)")
   end
 
   context 'there are title prohibited entry' do
