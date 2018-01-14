@@ -1,5 +1,11 @@
 namespace :hotentry do
   desc 'fetch hotentry'
+  task fetch_with_bookmark_count: :environment do
+    Rake::Task['hotentry:fetch'].invoke
+    Rake::Task['bookmark_count:fetch'].invoke
+  end
+
+  desc 'fetch hotentry'
   task fetch: :environment do
     Entry.destroy_all
     Category.all.each do |category|
