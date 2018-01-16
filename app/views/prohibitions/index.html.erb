@@ -7,7 +7,7 @@
     <%= f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]] %>
 
     <%= f.label :word %>:
-    <%= f.text_field :word %><br />
+    <%= f.text_field :word, id: :input_word %>
 
     <%= f.submit 'add' %>
   </p>
