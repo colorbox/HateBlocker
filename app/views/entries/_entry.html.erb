@@ -1,3 +1,10 @@
-<article>
-  <p><%= link_to(entry.title, entry.url) %>(<%= entry.bookmark_count %>)</p>
+<article class="entry">
+  <p>
+    <h3>
+      <%= link_to(entry.title, entry.url) %>
+    </h3>
+    <span class="bookmark-count">
+      <%= entry.bookmark_count %>users
+    </span>
+  </p>
 </article>
