@@ -11,28 +11,39 @@
   <body>
 
   <header>
-    <h1>
-      はてブロッカー
-    </h1>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p
-    <% if @user %>
-      <p>
-        <%= link_to '禁止ワード管理', prohibitions_path %>
-        <%= link_to 'アカウント削除', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'} %>
-      </p>
-    <% else %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'はてブロッカー', root_path, class: 'navbar-brand' %>
+        </div>
+        <% if @user %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="navbar-text">
+                <%= @user.uid %>
+              </p>
+            </li>
+            <li>
+              <%= link_to '禁止ワード管理', prohibitions_path %>
+            </li>
+            <li class="btn-danger">
+              <%= link_to 'アカウント削除', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'} %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+    <% if @user.nil? %>
       <%= form_for(:sessions, url: :sessions) do |f| %>
-        <p><%= link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path %></p>
+        <p><%= link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path, class: "btn btn-lg btn-primary" %></p>
       <% end %>
     <% end %>
-
   </header>
 
-  <hr>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p
 
-  <main>
+  <main id="main">
     <%= yield %>
   </main>
   </body>
