@@ -7,6 +7,7 @@ end
 
 gem 'rails', github: 'rails/rails'
 
+gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'devise'
 gem 'execjs'
