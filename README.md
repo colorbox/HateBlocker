@@ -1,7 +1,7 @@
 
 
 [![Build Status](https://travis-ci.org/colorbox/hateblocker.svg?branch=master)](https://travis-ci.org/colorbox/hateblocker)
-
+[![security](https://hakiri.io/github/colorbox/hateblocker/develop.svg)](https://hakiri.io/github/colorbox/hateblocker/develop)
 
 # Hateblocker
 
