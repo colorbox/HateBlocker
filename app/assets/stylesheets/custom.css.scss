@@ -1,0 +1,19 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  margin: 20px;
+}
+
+span.bookmark-count {
+  background-color: lavenderblush;
+  color: red;
+}
+
+article.entry {
+  margin: 4px;
+  padding: 4px;
+  border-style: solid;
+  border-color: darkgray;
+  border-width: 1px;
+}

@@ -9,5 +9,3 @@ COPY Gemfile /hateblocker/Gemfile
 COPY Gemfile.lock /hateblocker/Gemfile.lock
 
 RUN bundle install
-
-
