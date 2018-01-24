@@ -20,6 +20,7 @@ RSpec.feature 'Entry index', type: :feature do
     expect(page).to have_text("#{entry3.title} 0users")
     expect(page).to have_text("#{entry4.title} 0users")
     expect(page).to have_text("#{entry_with_count_25.title} 25users")
+    expect(page).to have_link("0users", href: "http://b.hatena.ne.jp/entry/#{entry1.url}")
   end
 
   context 'there are title prohibited entry' do
