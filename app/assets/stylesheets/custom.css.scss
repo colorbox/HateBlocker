@@ -8,6 +8,9 @@ body {
 span.bookmark-count {
   background-color: lavenderblush;
   color: red;
+  a {
+    color: red;
+  }
 }
 
 article.entry {

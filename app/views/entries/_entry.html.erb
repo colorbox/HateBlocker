@@ -4,7 +4,7 @@
       <%= link_to(entry.title, entry.url) %>
     </h3>
     <span class="bookmark-count">
-      <%= entry.bookmark_count %>users
+      <%= link_to "#{entry.bookmark_count}users", "http://b.hatena.ne.jp/entry/#{entry.url}" %>
     </span>
   </p>
 </article>
