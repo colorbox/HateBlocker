@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :prohibitions, dependent: :destroy
 
-  devise :omniauthable, omniauth_providers: %i(hatena)
+  devise :omniauthable, :timeoutable, omniauth_providers: %i(hatena)
 
   def prohibit_entry?(entry)
     prohibitions.map{|prohibition|
