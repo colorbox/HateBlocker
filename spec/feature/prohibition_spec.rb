@@ -38,4 +38,15 @@ RSpec.feature 'Prohibition index', type: :feature do
     expect(Prohibition.first.word).to eq('test_word')
     expect(Prohibition.first.prohibition_type).to eq('title')
   end
+
+  context 'there are some prohibitions' do
+    let!(:prohibition1) { create(:title_prohibition, user:user, word:'title_prohibition_example') }
+    let!(:prohibition2) { create(:domain_prohibition, user:user, word:'domain_prohibition_example') }
+
+    scenario 'type order' do
+      visit prohibitions_path
+
+      expect(page.body.index(prohibition2.word)).to be < page.body.index(prohibition1.word)
+    end
+  end
 end
