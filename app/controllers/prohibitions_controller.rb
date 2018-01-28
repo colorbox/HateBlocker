@@ -4,7 +4,7 @@ class ProhibitionsController < ApplicationController
   before_action :set_prohibition, only: %i(update destroy)
 
   def index
-    @prohibitions = @user.prohibitions
+    @prohibitions = @user.prohibitions.sort_by(&:prohibition_type)
   end
 
   def create
