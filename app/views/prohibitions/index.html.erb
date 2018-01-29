@@ -1,16 +1,21 @@
-<%= render partial: :prohibition, collection: @prohibitions %>
+
+<h4>
+  ブロックした要素一覧
+</h4>
+
+<ul class="list-group">
+  <%= render partial: :prohibition, collection: @prohibitions %>
+</ul>
 
 <%= form_for :prohibition  do |f| %>
-  <p>
-    <h4>ブロック要素の追加</h4>
-    <%= f.label :prohibition_type %>:
-    <%= f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]], id: 'prohibition_type' %>
+  <h4>
+    ブロック要素の追加
+  </h4>
+  <%= f.label :prohibition_type %>:
+  <%= f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]], id: 'prohibition_type' %>
 
-    <%= f.label :word %>:
-    <%= f.text_field :word, id: :input_word %>
+  <%= f.label :word %>:
+  <%= f.text_field :word, id: :input_word %>
 
-    <%= f.submit 'add' %>
-  </p>
+  <%= f.submit 'add' %>
 <% end %>
-
-<%= link_to 'Back to Top', categories_path %>

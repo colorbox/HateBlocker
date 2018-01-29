@@ -1,4 +1,8 @@
 ja:
+  prohibitions:
+    prohibition:
+      domain: 'ドメイン'
+      title: 'タイトル'
   categories:
     category:
       general: '一般'

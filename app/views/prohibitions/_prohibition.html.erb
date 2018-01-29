@@ -1,3 +1,4 @@
-<p>
-  <%= prohibition.prohibition_type %> <%= prohibition.word %> <%= link_to 'Delete', prohibition_path(prohibition), method: :delete %>
-</p>
+<li class="list-group-item">
+  <%= t(".#{prohibition.prohibition_type }") %> <%= prohibition.word %>
+  <%= link_to '削除', prohibition_path(prohibition), method: :delete %>
+</li>
