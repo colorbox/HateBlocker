@@ -16,7 +16,7 @@ RSpec.feature 'Prohibition index', type: :feature do
   scenario 'add domain prohibition' do
     visit prohibitions_path
 
-    select 'URLの一部', from: 'prohibition_prohibition_type'
+    select 'URLの一部', from: 'prohibition_type'
 
     fill_in :input_word, with: 'test_domain'
 
@@ -29,7 +29,7 @@ RSpec.feature 'Prohibition index', type: :feature do
   scenario 'add title prohibition' do
     visit prohibitions_path
 
-    select 'タイトルの一部', from: 'prohibition_prohibition_type'
+    select 'タイトルの一部', from: 'prohibition_type'
 
     fill_in :input_word, with: 'test_word'
 
