@@ -1,16 +1,52 @@
-<%= render partial: :prohibition, collection: @prohibitions %>
+
+<h4>
+  ブロックした要素一覧
+</h4>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        ドメイン
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: :prohibition, collection: @prohibitions.select{|p|p.domain?} %>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>
+        タイトル
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: :prohibition, collection: @prohibitions.select{|p|p.title?} %>
+  </tbody>
+</table>
+
 
 <%= form_for :prohibition  do |f| %>
-  <p>
-    <h4>ブロック要素の追加</h4>
-    <%= f.label :prohibition_type %>:
-    <%= f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]], id: 'prohibition_type' %>
+  <h4>
+    ブロック要素の追加
+  </h4>
+  <div class="form-group">
+    <%= f.label :prohibition_type, '禁止タイプ' %>:
+    <%= f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]], {} , {id: 'prohibition_type', class: 'form-control'} %>
+  </div>
 
-    <%= f.label :word %>:
-    <%= f.text_field :word, id: :input_word %>
+  <div class="form-group">
+    <%= f.label :word, '禁止ワードまたは禁止ドメイン' %>:
+    <%= f.text_field :word, id: :input_word, class: 'form-control' %>
+  </div>
 
-    <%= f.submit 'add' %>
-  </p>
+  <%= f.submit 'add' %>
 <% end %>
-
-<%= link_to 'Back to Top', categories_path %>

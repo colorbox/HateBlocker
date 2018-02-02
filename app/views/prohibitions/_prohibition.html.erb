@@ -1,3 +1,9 @@
-<p>
-  <%= prohibition.prohibition_type %> <%= prohibition.word %> <%= link_to 'Delete', prohibition_path(prohibition), method: :delete %>
-</p>
+<tr>
+  <th></th>
+  <th>
+    <%= prohibition.word %>
+  </th>
+  <th>
+    <%= link_to '削除', prohibition_path(prohibition), method: :delete %>
+  </th>
+</tr>
