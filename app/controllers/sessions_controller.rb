@@ -2,6 +2,11 @@ require 'oauth'
 require 'json'
 
 class SessionsController < ApplicationController
+
+  def index
+    redirect_to categories_path if user_signed_in?
+  end
+
   def create
     @consumer = OAuth::Consumer.new(
       ENV['HATENA_CONSUMER_KEY'],
