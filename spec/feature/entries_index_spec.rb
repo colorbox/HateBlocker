@@ -46,4 +46,16 @@ RSpec.feature 'Entry index', type: :feature do
       expect(page).not_to have_text(entry4.title)
     end
   end
+
+  context 'there is invalidated prohibition' do
+    let!(:first_prohibition){ create(:domain_prohibition, word: 'example', user: user, activated: false) }
+
+    scenario 'invalidated prohibition word will not affect any entries' do
+      visit category_entries_path(category.kind)
+      expect(page).to have_text(entry1.title)
+      expect(page).to have_text(entry2.title)
+      expect(page).to have_text(entry3.title)
+      expect(page).to have_text(entry4.title)
+    end
+  end
 end
