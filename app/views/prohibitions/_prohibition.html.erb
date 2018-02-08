@@ -5,13 +5,9 @@
   </th>
   <th>
     <% if prohibition.activated? %>
-      <%= form_tag prohibition_path(prohibition), method: :put do %>
-        <%= submit_tag '無効', {class: 'activate_switch'} %>
-      <% end %>
+      <%= button_to "無効", prohibition_path(prohibition), {method: :put, class: 'activate_switch'} %>
     <% else %>
-      <%= form_tag prohibition_path(prohibition), method: :put do %>
-        <%= submit_tag '有効', {class: 'activate_switch'} %>
-      <% end %>
+      <%= button_to "有効", prohibition_path(prohibition), {method: :put, class: 'activate_switch'} %>
     <% end %>
   </th>
   <th>
