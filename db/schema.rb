@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_02_06_111533) do
     t.string "word", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "activation_status", null: false
+    t.boolean "activated", default: true, null: false
     t.index ["user_id"], name: "index_prohibitions_on_user_id"
   end
 

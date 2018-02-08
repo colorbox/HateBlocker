@@ -4,6 +4,17 @@
     <%= prohibition.word %>
   </th>
   <th>
+    <% if prohibition.activated? %>
+      <%= form_tag prohibition_path(prohibition), method: :put do %>
+        <%= submit_tag '無効', {class: 'activate_switch'} %>
+      <% end %>
+    <% else %>
+      <%= form_tag prohibition_path(prohibition), method: :put do %>
+        <%= submit_tag '有効', {class: 'activate_switch'} %>
+      <% end %>
+    <% end %>
+  </th>
+  <th>
     <%= link_to '削除', prohibition_path(prohibition), method: :delete %>
   </th>
 </tr>

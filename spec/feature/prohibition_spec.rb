@@ -50,14 +50,12 @@ RSpec.feature 'Prohibition index', type: :feature do
     end
 
     scenario 'switch prohibition' do
-      scenario 'type order' do
-        visit prohibitions_path
+      visit prohibitions_path
 
-        expect(page).to have_content('無効')
-        find_button(:css, 'button.activate_switch').click
-        expect(page).to have_content('有効')
-      end
-
+      expect(page).not_to have_button('有効')
+      expect(page).to have_button('無効')
+      first(:css, 'input.activate_switch').click
+      expect(page).to have_button('有効')
     end
   end
 end

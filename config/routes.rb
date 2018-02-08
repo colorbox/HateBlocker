@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: %i(create index)
-  resources :prohibitions, only: %i(index create destroy)
+  resources :prohibitions, only: %i(index create destroy update)
   resources :users, only: %i(destroy)
 end
