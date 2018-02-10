@@ -3,6 +3,8 @@ class Prohibition < ApplicationRecord
 
   enum prohibition_type: {domain: 'domain', title: 'title'}
 
+  scope :is_active, -> { where(activated: true) }
+
   def prohibit?(target)
     target.include?(word)
   end
