@@ -17,6 +17,11 @@ class ProhibitionsController < ApplicationController
     redirect_to prohibitions_path
   end
 
+  def update
+    @prohibition.update(activated: !@prohibition.activated)
+    redirect_to prohibitions_path
+  end
+
   private
 
   def set_prohibition
