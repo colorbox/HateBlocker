@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :omniauthable, :timeoutable, omniauth_providers: %i(hatena)
 
   def prohibit_entry?(entry)
-    prohibitions.map{|prohibition|
+    prohibitions.is_active.map{|prohibition|
       (prohibition.prohibit?(entry.url) && prohibition.domain?) || (prohibition.prohibit?(entry.title) && prohibition.title?)
     }.any?
   end

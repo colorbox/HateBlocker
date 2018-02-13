@@ -48,5 +48,14 @@ RSpec.feature 'Prohibition index', type: :feature do
 
       expect(page.body.index(prohibition2.word)).to be < page.body.index(prohibition1.word)
     end
+
+    scenario 'switch prohibition' do
+      visit prohibitions_path
+
+      expect(page).not_to have_button('有効')
+      expect(page).to have_button('無効')
+      first(:css, 'input.activate_switch').click
+      expect(page).to have_button('有効')
+    end
   end
 end
