@@ -31,6 +31,9 @@
             </li>
           </ul>
         <% end %>
+        <ul class="nav navbar-nav">
+          <%= render partial: :category, collection: @categories %>
+        </ul>
       </div>
     </nav>
     <% if @user.nil? %>
