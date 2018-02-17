@@ -29,5 +29,4 @@ RSpec.feature 'Category index', type: :feature do
     expect(page).to have_content('エンタメ')
     expect(page).to have_content('アニメとゲーム')
   end
-
 end
