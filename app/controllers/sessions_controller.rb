@@ -4,7 +4,7 @@ require 'json'
 class SessionsController < ApplicationController
 
   def index
-    redirect_to categories_path if user_signed_in?
+    redirect_to category_entries_path(Category.first) if user_signed_in?
   end
 
   def create

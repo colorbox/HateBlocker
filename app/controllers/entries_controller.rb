@@ -7,6 +7,8 @@ class EntriesController < ApplicationController
   before_action :set_user
 
   def index
-    @entries = Category.find_by(kind: params[:category_kind]).entries.reject{|entry| @user.prohibit_entry?(entry)}
+    @categories = Category.all
+    category = Category.find_by(kind: params[:category_kind])
+    @entries = category.entries.reject{|entry| @user.prohibit_entry?(entry)} if category
   end
 end

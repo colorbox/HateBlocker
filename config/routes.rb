@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  resources :categories, param: :kind,  only: %i(index) do
+  resources :categories, param: :kind,  only: [] do
     resources :entries, only: :index
   end
 
