@@ -4,7 +4,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     sign_in @user
 
-    redirect_to category_entries_path(Category.first)
+    redirect_to category_entries_path(Category.first.kind)
   end
 
   def failure
