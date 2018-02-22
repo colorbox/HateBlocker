@@ -4,7 +4,12 @@ require 'json'
 class SessionsController < ApplicationController
 
   def index
-    redirect_to category_entries_path(Category.first) if user_signed_in?
+    if session[:last_shown_category]
+      category = Category.find_by_kind(session[:last_shown_category])
+      redirect_to category_entries_path(category.kind) if user_signed_in?
+    else
+      redirect_to category_entries_path(Category.first.kind) if user_signed_in?
+    end
   end
 
   def create
