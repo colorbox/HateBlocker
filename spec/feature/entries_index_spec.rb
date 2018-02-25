@@ -58,4 +58,22 @@ RSpec.feature 'Entry index', type: :feature do
       expect(page).to have_text(entry4.title)
     end
   end
+
+  context 'category saved in session' do
+    let!(:category2){ create(:category, kind: :social) }
+
+    scenario 'redirect to last displayed category' do
+      visit category_entries_path(category.kind)
+      expect(page).to have_text(entry1.title)
+
+      visit sessions_path
+      expect(page).to have_text(entry1.title)
+
+      visit category_entries_path(category2.kind)
+      expect(page).not_to have_text(entry1.title)
+
+      visit sessions_path
+      expect(page).not_to have_text(entry1.title)
+    end
+  end
 end

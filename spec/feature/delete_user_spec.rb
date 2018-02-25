@@ -10,7 +10,7 @@ RSpec.feature 'Category index', type: :feature do
   end
 
   scenario 'delete account' do
-    visit categories_path
+    visit category_entries_path(category)
 
     click_link('アカウント削除')
 

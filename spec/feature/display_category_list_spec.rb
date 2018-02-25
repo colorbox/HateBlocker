@@ -17,7 +17,7 @@ RSpec.feature 'Category index', type: :feature do
   end
 
   scenario 'confirm display name' do
-    visit categories_path
+    visit category_entries_path(general)
 
     expect(page).to have_content('一般')
     expect(page).to have_content('世の中')
@@ -29,5 +29,4 @@ RSpec.feature 'Category index', type: :feature do
     expect(page).to have_content('エンタメ')
     expect(page).to have_content('アニメとゲーム')
   end
-
 end
