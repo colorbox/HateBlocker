@@ -1,3 +1,7 @@
 <li>
-  <%= link_to t(".#{category.kind}"), category_entries_path(category.kind) %>
+  <% if category == selected %>
+    <%= link_to t(".#{category.kind}"), category_entries_path(category.kind), class: 'selected' %> %>
+  <% else %>
+    <%= link_to t(".#{category.kind}"), category_entries_path(category.kind) %>
+  <% end %>
 </li>
