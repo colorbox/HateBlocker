@@ -19,6 +19,7 @@ RSpec.feature 'Category index', type: :feature do
   scenario 'confirm display name' do
     visit category_entries_path(general)
 
+    expect(page.find('a.selected', text:'一般')).not_to be_nil
     expect(page).to have_content('一般')
     expect(page).to have_content('世の中')
     expect(page).to have_content('政治と経済')
