@@ -32,7 +32,7 @@
           </ul>
         <% end %>
         <ul class="nav navbar-nav">
-          <%= render partial: :category, collection: @categories %>
+          <%= render partial: :category, collection: @categories, locals: { selected: @selected_category } %>
         </ul>
       </div>
     </nav>
