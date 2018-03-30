@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Category index', type: :feature do
+RSpec.feature 'Category index' do
   let!(:general){ create(:category, kind: 'general') }
   let!(:social){ create(:category, kind: 'social') }
   let!(:economics){ create(:category, kind: 'economics') }

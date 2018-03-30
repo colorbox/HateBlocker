@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Entry index', type: :feature do
+RSpec.feature 'Entry index' do
   let(:category){ create(:category) }
   let!(:entry1){ create(:entry, title: 'entry1title', url: 'http://example.com', category: category) }
   let!(:entry2){ create(:entry, title: 'entry2title', url: 'http://example2.com', category: category) }
