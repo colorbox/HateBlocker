@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title Hateblocker
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+
+  %header
+    %nav{class:"navbar navbar-default"}
+      .container-fluid
+        .navbar-header = link_to 'はてブロッカー(β)', root_path, class: 'navbar-brand'
+        - if @user
+          %ul{class:"nav navbar-nav navbar-right"}
+            %li
+              %p{class:"navbar-text"}
+                = @user.uid
+            %li
+              = link_to '禁止ワード管理', prohibitions_path
+            %li{class:"btn-danger"}
+              = link_to 'アカウント削除', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'}
+        %ul{class:"nav navbar-nav"}
+          = render partial: :category, collection: @categories, locals: { selected: @selected_category }
+    - if @user.nil?
+      = form_for(:sessions, url: :sessions) do |f|
+        %p = link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path, class: "btn btn-lg btn-primary"
+
+  %p{class:"notice"} = notice
+  %p{class:"alert"} = alert
+
+  %main{id:"main"}
+    = yield

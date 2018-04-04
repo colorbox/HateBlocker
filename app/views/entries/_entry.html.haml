@@ -1,0 +1,4 @@
+%article{class: "entry"}
+  %p
+    %h3= link_to(entry.title, entry.url)
+    %span{class:"bookmark-count"}= link_to "#{entry.bookmark_count}users", "http://b.hatena.ne.jp/entry/#{entry.url}"
