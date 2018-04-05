@@ -12,7 +12,8 @@
   %header
     %nav{class:"navbar navbar-default"}
       .container-fluid
-        .navbar-header = link_to 'はてブロッカー(β)', root_path, class: 'navbar-brand'
+        .navbar-header
+          = link_to 'はてブロッカー(β)', root_path, class: 'navbar-brand'
         - if @user
           %ul{class:"nav navbar-nav navbar-right"}
             %li
@@ -28,8 +29,10 @@
       = form_for(:sessions, url: :sessions) do |f|
         %p = link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path, class: "btn btn-lg btn-primary"
 
-  %p{class:"notice"} = notice
-  %p{class:"alert"} = alert
+  %p{class:"notice"}
+    = notice
+  %p{class:"alert"}
+    = alert
 
   %main{id:"main"}
     = yield
