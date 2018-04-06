@@ -1,0 +1,39 @@
+%h4
+  ブロックした要素一覧
+
+%table{class:"table table-hover"}
+  %thead
+    %tr
+      %th
+        ドメイン
+      %th
+      %th
+      %th
+
+  %tbody
+    = render partial: :prohibition, collection: @prohibitions.select{|p|p.domain?}
+
+  %thead
+    %tr
+      %th
+        タイトル
+      %th
+      %th
+      %th
+
+  %tbody
+    = render partial: :prohibition, collection: @prohibitions.select{|p|p.title?}
+
+
+= form_for :prohibition  do |f|
+  %h4>
+    ブロック要素の追加
+  .form-group
+    = f.label :prohibition_type, '禁止タイプ'
+    = f.select :prohibition_type, [['URLの一部', :domain],['タイトルの一部', :title]], {} , {id: 'prohibition_type', class: 'form-control'}
+
+  .form-group
+    = f.label :word, '禁止ワードまたは禁止ドメイン'
+    = f.text_field :word, id: :input_word, class: 'form-control'
+
+  = f.submit 'add'
