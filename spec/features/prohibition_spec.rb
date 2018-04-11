@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Prohibition index', type: :feature do
+RSpec.feature 'Prohibition index' do
   let(:user){ create(:user) }
 
   before do

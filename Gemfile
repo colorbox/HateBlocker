@@ -5,13 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', github: 'rails/rails'
+gem 'rails', '5.2.0.rc2'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'devise'
 gem 'execjs'
 gem 'feedjira'
+gem 'haml-rails'
 gem 'httpclient'
 gem 'jbuilder'
 gem 'oauth'

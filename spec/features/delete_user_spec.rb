@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Category index', type: :feature do
+RSpec.feature 'Category index' do
   let(:category){ create(:category) }
   let(:user){ create(:user) }
   let!(:prohibition){ create(:title_prohibition, word: 'entry', user: user) }

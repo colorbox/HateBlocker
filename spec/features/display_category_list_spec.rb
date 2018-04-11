@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Category index', type: :feature do
+RSpec.feature 'Category index' do
   let!(:general){ create(:category, kind: 'general') }
   let!(:social){ create(:category, kind: 'social') }
   let!(:economics){ create(:category, kind: 'economics') }
@@ -17,7 +17,7 @@ RSpec.feature 'Category index', type: :feature do
   end
 
   scenario 'confirm display name' do
-    visit category_entries_path(general)
+    visit category_entries_path(general.kind)
 
     expect(page.find('a.selected', text:'一般')).not_to be_nil
     expect(page).to have_content('一般')
