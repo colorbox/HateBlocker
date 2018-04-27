@@ -27,7 +27,8 @@
           = render partial: :category, collection: @categories, locals: { selected: @selected_category }
     - if @user.nil?
       = form_for(:sessions, url: :sessions) do |f|
-        %p = link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path, class: "btn btn-lg btn-primary"
+        %p
+          = link_to "はてなIDでログイン", user_hatena_omniauth_authorize_path, class: "btn btn-lg btn-primary"
 
   %p{class:"notice"}
     = notice
