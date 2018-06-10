@@ -15,11 +15,11 @@ RSpec.feature 'Entry index' do
 
   scenario 'visit index' do
     visit category_entries_path(category.kind)
-    expect(page).to have_text("#{entry1.title} 0users")
-    expect(page).to have_text("#{entry2.title} 0users")
-    expect(page).to have_text("#{entry3.title} 0users")
-    expect(page).to have_text("#{entry4.title} 0users")
-    expect(page).to have_text("#{entry_with_count_25.title} 25users")
+    expect(page).to have_text("#{entry1.title}\n0users")
+    expect(page).to have_text("#{entry2.title}\n0users")
+    expect(page).to have_text("#{entry3.title}\n0users")
+    expect(page).to have_text("#{entry4.title}\n0users")
+    expect(page).to have_text("#{entry_with_count_25.title}\n25users")
     expect(page).to have_link("0users", href: "http://b.hatena.ne.jp/entry/#{entry1.url}")
   end
 
