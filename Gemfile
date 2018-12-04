@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '5.2.1'
+gem 'rails', '>= 5.2.1.1'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails'
@@ -42,3 +42,4 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'activestorage', '>= 5.2.1.1'
