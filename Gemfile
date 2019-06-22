@@ -7,7 +7,7 @@ end
 
 gem 'rails', '5.2.1'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '>= 3.4.0'
 gem 'coffee-rails'
 gem 'devise'
 gem 'execjs'
